@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w",
+    "start": "webpack-dev-server -d --content-base ./dist"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack-dev-server": "3.10.1"
+  },
+  "private": true
+}
