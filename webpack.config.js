@@ -1,17 +1,22 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    // production: 最適化された状態で出力
-    // development: ソースマップ有効で出力
-    //mode: "development",
-    mode: "production",
-    
-    // メインとなるJavaScriptファイル(エントリポイント)
-    entry: "./src/main.tsx",
+    //mode: "development",      // ソースマップ有効で出力
+    mode: "production",         // 最適化された状態で出力
+
+    entry: "./src/main.tsx",    // エントリポイントとなるメインのjsファイル
     output: {
-        path: `${__dirname}/dist`,
-        filename: "bundle.js"
+        path: path.join(__dirname, "/dist"),
+        filename: "[name].bundle.js"
     },
+    plugins: [
+        // index.htmlファイルをdist以下に配置
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: "src/index.html"
+        })
+    ],
     module: {
         rules: [
             {
@@ -23,7 +28,7 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
-    
+
     // cloud9用の設定
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
