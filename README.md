@@ -2,11 +2,14 @@
 * React + TypeScriptでサクッとWebアプリケーションを作成するプラクティス用リポジトリ。
 * AWS Cloud9での開発を前提
 
-# 使い方(Cloud9)
+# 開発セットアップ(Cloud9)
 ```
 // (github) https://github.com/enuswi/react-app
 $ git clone https://github.com/enuswi/react-app.git
 $ cd app
+
+// パッケージインストール
+$ npm install
 
 // 必要なファイルをビルド(dist以下)
 $ npm run build
