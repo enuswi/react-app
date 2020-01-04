@@ -12,14 +12,14 @@
 │   ├── main.bundle.js
 │   └── style.css
 ├── node_modules
-├── src ...実際に変更するフォルダ。
+├── src ...実際に作業するフォルダ。
 │   ├── index.html
 │   ├── main.tsx
 │   └── style.scss
 ├── package-lock.json
 ├── package.json
-├── tsconfig.json
-└── webpack.config.js
+├── tsconfig.json ... typescriptの設定ファイル
+└── webpack.config.js ...webpackの設定ファイル
 ```
 
 # 開発セットアップ(Cloud9)
