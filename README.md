@@ -1,6 +1,26 @@
 # 概要
 * React + TypeScriptでサクッとWebアプリケーションを作成するプラクティス用リポジトリ。
 * AWS Cloud9での開発を前提
+* CSSはscssで記述しビルドする
+* ビルドはwebpack4を用いて行う
+
+# 構成
+```
+・
+├── dist ...ビルドされたファイルが出力されるフォルダ。
+│   ├── index.html
+│   ├── main.bundle.js
+│   └── style.css
+├── node_modules
+├── src ...実際に変更するフォルダ。
+│   ├── index.html
+│   ├── main.tsx
+│   └── style.scss
+├── package-lock.json
+├── package.json
+├── tsconfig.json
+└── webpack.config.js
+```
 
 # 開発セットアップ(Cloud9)
 ```
