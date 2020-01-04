@@ -6,7 +6,10 @@ import './style.scss';
 class Hoge extends React.Component {
     render() {
         return (
-            <div>hoge</div>
+            <div>
+                <div className="hoge">hoge</div>
+                <div className="fuga">fuga</div>
+            </div>
         );
     }
 }

@@ -1,5 +1,13 @@
 body {
-    color: pink;
-    background: black;
-    margin: auto;
+    background: gray;
+
+    .hoge {
+        color: blue;
+        margin: auto;
+    }
+
+    .fuga {
+        color: red;
+        margin: auto;
+    }
 }
