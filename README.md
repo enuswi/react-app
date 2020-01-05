@@ -26,18 +26,20 @@
 ```
 // (github) https://github.com/enuswi/react-app
 $ git clone https://github.com/enuswi/react-app.git
-$ cd app
+$ cd react-app
 
 // パッケージインストール
 $ npm install
-
-// 必要なファイルをビルド(dist以下)
-$ npm run build
 
 // アプリケーションの起動
 $ npm start
 
 // 「Preview > Preview Running Application」で動作確認
+```
+
+# ビルド (dist)
+```
+$ npm run build
 ```
 
 # 環境作成のメモ書き
