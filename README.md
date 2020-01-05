@@ -37,10 +37,11 @@ $ npm start
 // 「Preview > Preview Running Application」で動作確認
 ```
 
-# ビルド (dist)
+# ビルド
 ```
 $ npm run build
 ```
+＊dist以下に配置される。
 
 # 環境作成のメモ書き
 ```
