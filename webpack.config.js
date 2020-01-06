@@ -1,14 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    //mode: "development",      // ソースマップ有効で出力
-    mode: "production",         // 最適化された状態で出力
+    //mode: "development",
+    mode: "production",
+    devtool: "source-map",
 
     entry: {
-        main: "./src/main.tsx",    // エントリポイントとなるメインのjsファイル
-        //style: "./src/style.scss"
+        main: "./src/main.tsx",
     },
     output: {
         path: path.join(__dirname, "/dist"),
@@ -22,17 +22,11 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                url: false,
-                            }
-                        },
-                        'sass-loader'
-                    ]
-                })
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
             }
         ]
     },
@@ -45,7 +39,9 @@ module.exports = {
             inject: true,
             template: "src/index.html"
         }),
-        new ExtractTextPlugin("style.css")
+        new MiniCssExtractPlugin({
+            filename: "style.css"
+        })
     ],
 
     // cloud9用の設定
