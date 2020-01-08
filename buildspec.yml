@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+    pre_build:
+        commands:
+            - echo pre_build start `date`
+            - npm install
+    build:
+        commands:
+            - echo build start `date`
+            - npm run build
+#    post_build:
+#        commands:
+#            - echo post_build start `date`
+artifacts:
+    files:
+        - 'dist/**/*'
