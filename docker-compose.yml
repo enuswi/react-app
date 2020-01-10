@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  node:
+    tty: true
+    build: ./
+    volumes:
+      - ./src:/home/app/src
+      - ./dist:/home/app/dist
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8080:80
+      #- 10443:443
+    volumes:
+      - ./docker/nginx/conf:/etc/nginx/conf.d:ro
+      - ./dist:/var/www/html
