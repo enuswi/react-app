@@ -1,12 +1,14 @@
 # 概要
 * React + TypeScriptでサクッとWebアプリケーションを作成するプラクティス用リポジトリ。
-* AWS Cloud9での開発を前提
+* AWS Cloud9/Dockerで動作確認済み(2020.01.10)
 * CSSはscssで記述しビルドする
 * ビルドはwebpack4を用いて行う
 
 # 構成
 ```
 ・
+├── docker
+│   └── nginx ...とりあえずnginxの設定ファイルのみ配置している
 ├── dist ...ビルドされたファイルが出力されるフォルダ。
 │   ├── index.html
 │   ├── main.bundle.js
@@ -22,9 +24,10 @@
 └── webpack.config.js ...webpackの設定ファイル
 ```
 
-# 開発セットアップ(Cloud9)
+# cloud9
+
+## 開発セットアップ
 ```
-// (github) https://github.com/enuswi/react-app
 $ git clone https://github.com/enuswi/react-app.git
 $ cd react-app
 
@@ -33,15 +36,38 @@ $ npm install
 
 // アプリケーションの起動
 $ npm start
-
-// 「Preview > Preview Running Application」で動作確認
 ```
 
-# ビルド
+## 動作確認
+「Preview > Preview Running Application」で動作確認
+
+## ビルド
 ```
 $ npm run build
 ```
 ＊dist以下に配置される。
+
+# docker
+
+## 開発セットアップ
+```
+$ git clone https://github.com/enuswi/react-app.git
+
+$ docker-compose build
+$ docker-compose up -d
+```
+
+## 動作確認
+http://localhost:8080
+
+## ビルド
+コンテナ起動時からwebpackが変更を検知し自動でビルドしてくれる為、不要
+nodeコンテナに入れば手動実行もできるはず
+
+```
+$ docker exec -it {container} /bin/bash
+```
+＊多分こんな感じで入れるはず
 
 # 環境作成のメモ書き
 ```
@@ -60,4 +86,10 @@ $ npm install --save react react-dom @types/react @types/react-dom
 // 設定ファイルの作成 (内容はファイルを確認)
 $ touch tsconfig.json
 $ touch webpack.config.js
+
+// react-routerを使う為にパッケージを追加
+$ npm install react-router-dom @types/react-router-dom
+
+// dockerでの開発環境構築
+
 ```
