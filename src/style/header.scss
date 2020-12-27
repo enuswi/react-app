@@ -1,0 +1,46 @@
+
+.header {
+
+    &__title {
+        padding-left: 1rem;
+        flex: 1 1 auto;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__menu {
+        position: relative;
+        width: 4rem;
+        text-align: center;
+
+        &::after {
+            content: '+';
+        }
+
+        &.opend::after {
+            content: '×';
+        }
+
+        &--nav {
+            background: aquamarine;
+            width: 20rem;
+            position: absolute;
+            display: none;
+            top: 4rem;
+            right: 0;
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+
+            a {
+                display: block;
+                height: 2.8rem;
+                line-height: 2.8rem;
+                border-top: 1px solid lightblue;
+                color: inherit;        
+            }
+        }
+    }
+}

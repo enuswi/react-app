@@ -27,7 +27,7 @@ class Player extends React.Component<any, PlayerProps> {
 class Record extends React.Component {
     render() {
         return(
-            <div>
+            <div className="content">
                 <h1>Record</h1>
                 <div>
                     <Player name={'X'} />
